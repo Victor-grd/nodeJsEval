@@ -56,13 +56,6 @@ router.post("/", function (req, res, next) {
     errors.push("Email");
   }
 
-  if (
-    !req.body.password ||
-    !/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/.test(req.body.password)
-  ) {
-    errors.push("Mot de passe");
-  }
-
   if (!req.body.password2 || req.body.password !== req.body.password2) {
     errors.push("Confirmation du mot de passe");
   }
