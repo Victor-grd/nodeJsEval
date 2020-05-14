@@ -1,0 +1,73 @@
+{% extends 'admin/layout.twig' %}
+
+{% block header %}
+	<div>
+		<p>{{user.pseudo}}</p>
+		<a href="#" id="logout">Se déconnecter</a>
+		<img class="header__profile" src={{ '/images/user' ~ user.avatar ~ '.png'}} alt="room">
+	</div>
+{% endblock %}
+
+
+{% block body %}
+	<main>
+		<div class="form--dashboard">
+			<h1 class="card-title">Cree une room</h1>
+			<form class="form" method="post" action="/admin" enctype="application/x-www-form-urlencoded">
+				<label class="form__label" for="name">Nom de la room</label>
+				<input class="form__input" id="name" type="text" name="name" placeholder="Nom de la room" value="test" required>
+
+				<label class="form__label" for="status">room privé :</label>
+				<input type="checkbox" name="status">
+
+				<input type="hidden" name="owner" value={{ user.id }}>
+
+				<input class="form__submit" type="submit" value="create">
+			</form>
+		</div>
+
+		{# LISTE privée #}
+		<h1>vos room priver</h1>
+		<hr>
+		<div class="room">
+
+			{% for room in rooms %}
+				{% if user._id in room.users and room.status is same as("true") %}
+					<div class="room__item">
+						<img class="room__img" src="/images/room.png" alt="room">
+						<h3>{{ room.name }}</h3>
+						<div>
+							<div class="room__actions">
+								<button class="button--edit" disabled></button>
+								<button class="button--delete" onclick="deleteRoom('{{ room._id }}')"></button>
+							</div>
+						</div>
+						<a class="room__link" href={{"/admin/" ~ room._id}}></a>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+
+		{# LISTE PRIVER #}
+		<h1>room public</h1>
+		<hr>
+		<div class="room">
+			{% for room in rooms %}
+				{% if room.status != "true" %}
+					<div class="room__item">
+						<img class="room__img" src="/images/room.png" alt="room">
+						<h3>{{ room.name }}</h3>
+						<div>
+							<div class="room__actions">
+								<button class="button--edit" disabled></button>
+								<button class="button--delete" onclick="deleteRoom('{{ room._id }}')"></button>
+							</div>
+						</div>
+						<a class="room__link" href={{"/admin/" ~ room._id}}></a>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</main>
+{% endblock %}
+{#  #}

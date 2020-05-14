@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body class="p-0">
+  	<header class="header">
+      <div>
+      <h3 class="header__title"> {{ title }} </h3>
+      </div>
+      {% block header %}
+      {% endblock %}
+	</header>
+    {% block body %}
+    {% endblock %}
+  </body>
+  <script src="/javascripts/adminAuthentification.js" type="text/javascript"></script>
+  <script src="/javascripts/index.js" type="text/javascript"></script>
+
+</html>

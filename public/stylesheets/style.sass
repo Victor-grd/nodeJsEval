@@ -1,0 +1,193 @@
+// Normalize ------------------------- 
+
+$color1 : #004390
+$color2 : #3c3c3c
+
+body
+  margin: 0
+  padding: 0
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+  background: $color2
+  color: rgba(white, 0.8)
+
+h1,h2,h3,h4,h5
+  margin: 5px 0
+
+a
+  color: #00B7FF
+
+.center
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 50px 0
+
+.none
+  display: none!important
+
+main
+  margin: 50px
+
+// Layout ------------------------------------------
+
+.header
+  background: $color1
+  color: white
+  display: flex
+  justify-content: space-between
+  color: white
+
+
+  & div
+    display: flex
+    align-items: center
+
+  *
+    margin: 0 10px
+
+  &__title
+    margin: 30px
+
+  &__profile
+    height: 50px
+
+// Formulaire de connexion ------------------------- 
+.user
+  &__img
+    width: 100%
+
+.grid
+  width: 50%
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  grid-gap: 10px
+
+form
+  display: flex
+  flex-direction: column
+
+.form
+  &--login
+    padding: 50px
+    width: 25em
+    height: 32em
+    position: relative
+    background: $color2
+    border: 1px solid rgba(black, 0.5)
+    box-shadow: 15px 15px 0 rgba(black, 0.25)
+
+  &__input
+    margin: 0px 0 10px 0
+    padding: 10px
+    border: none
+    background: rgba(white, 0.8)
+
+
+  &__switch
+    background: none
+    border: none
+    color: blue
+    position: absolute
+    bottom: 5px
+    right: 5px
+
+    &:hover
+      text-decoration: underline
+      cursor: pointer
+
+  &__submit
+    border: 1px solid $color1
+    color: $color1
+    text-transform: uppercase
+    background: none
+    padding: 10px
+    width: 50%
+
+    &:hover
+      background: $color1
+      color: white
+      font-weight: bold
+      cursor: pointer
+
+  &__label
+    &--required
+      &::after
+        content: "*"
+        color: red
+
+// Admin Dashboard ------------------------- 
+
+.form
+  &--dashboard
+    padding: 40px
+    position: relative
+    background: rgba(black, 0.2)
+
+.room
+  display: flex
+  flex-direction: row
+  margin: 30px 0
+
+  &__item
+    width: 20em
+    display: flex
+    flex-direction: column
+    padding: 15px
+    justify-content: center
+    align-items: center
+    margin: 0 20px
+    position: relative
+    border: 1px solid rgba(black, 0.5)
+    box-shadow: 15px 15px 0 rgba(black, 0.25)
+
+    &:first-child
+      margin-left: 0
+
+    &:last-child
+      margin-right: 0
+
+  &__img
+    height: auto
+    width: 200px
+
+  &__link
+    &::after
+      content: ""
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      cursor: pointer
+
+.button
+  &--edit
+    height: 25px
+    width: 25px
+    position: relative
+    z-index: 5
+    &::before
+      content: ""
+      top: 2px
+      bottom: 2px
+      left: 2px
+      right: 2px
+      position: absolute
+      background-size: cover
+      background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMnB4Ij48Zz48cGF0aCBkPSJtMzg0LjcyMSAwLTMyMy42MjYgMzIzLjYyNy02MS4wOTUgMTg4LjM3MyAxODguMzc0LTYxLjA5NCAzMjMuNjI2LTMyMy42Mjd6bTg0Ljg1MyAxMjcuMjc5LTQyLjQyNyA0Mi40MjctODQuODUzLTg0Ljg1MyA0Mi40MjYtNDIuNDI3em0tMzg4LjYxMSAyMzIuMzMxIDcxLjQyNyA3MS40MjgtMzIuMDM2IDEwLjM5LTQ5Ljc4Mi00OS43ODJ6bTE0LjUwMS0yNy45MjUgMjI1LjYxNy0yMjUuNjE4IDMxLjgyIDMxLjgyLTIyNS42MTggMjI1LjYxN3ptNTMuMDMyIDUzLjAzMiAyMjUuNjE4LTIyNS42MTkgMzEuODIgMzEuODItMjI1LjYxOCAyMjUuNjE5em0tODguMzEzIDM4Ljk2NSAyOC4xMzYgMjguMTM2LTQxLjY0MiAxMy41MDV6IiBmaWxsPSIjMDAwMDAwIi8+PC9nPjwvc3ZnPgo=)
+
+  &--delete
+    height: 25px
+    width: 25px
+    position: relative
+    z-index: 5
+    &::before
+      content: ""
+      top: 2px
+      bottom: 2px
+      left: 2px
+      right: 2px
+      position: absolute
+      background-size: cover
+      background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSItNDcgMCA1MTIgNTEyIiB3aWR0aD0iNTEycHgiPjxwYXRoIGQ9Im00MTYuODc1IDExNC40NDE0MDYtMTEuMzA0Njg4LTMzLjg4NjcxOGMtNC4zMDQ2ODctMTIuOTA2MjUtMTYuMzM5ODQzLTIxLjU3ODEyNi0yOS45NDE0MDYtMjEuNTc4MTI2aC05NS4wMTE3MTh2LTMwLjkzMzU5M2MwLTE1LjQ2MDkzOC0xMi41NzAzMTMtMjguMDQyOTY5LTI4LjAyNzM0NC0yOC4wNDI5NjloLTg3LjAwNzgxM2MtMTUuNDUzMTI1IDAtMjguMDI3MzQzIDEyLjU4MjAzMS0yOC4wMjczNDMgMjguMDQyOTY5djMwLjkzMzU5M2gtOTUuMDA3ODEzYy0xMy42MDU0NjkgMC0yNS42NDA2MjUgOC42NzE4NzYtMjkuOTQ1MzEzIDIxLjU3ODEyNmwtMTEuMzA0Njg3IDMzLjg4NjcxOGMtMi41NzQyMTkgNy43MTQ4NDQtMS4yNjk1MzEyIDE2LjI1NzgxMyAzLjQ4NDM3NSAyMi44NTU0NjkgNC43NTM5MDYgNi41OTc2NTYgMTIuNDQ1MzEyIDEwLjUzOTA2MyAyMC41NzgxMjUgMTAuNTM5MDYzaDExLjgxNjQwNmwyNi4wMDc4MTMgMzIxLjYwNTQ2OGMxLjkzMzU5NCAyMy44NjMyODIgMjIuMTgzNTk0IDQyLjU1ODU5NCA0Ni4xMDkzNzUgNDIuNTU4NTk0aDIwNC44NjMyODFjMjMuOTIxODc1IDAgNDQuMTc1NzgxLTE4LjY5NTMxMiA0Ni4xMDU0NjktNDIuNTYyNWwyNi4wMDc4MTItMzIxLjYwMTU2Mmg2LjU0Mjk2OWM4LjEzMjgxMiAwIDE1LjgyNDIxOS0zLjk0MTQwNyAyMC41NzgxMjUtMTAuNTM1MTU3IDQuNzUzOTA2LTYuNTk3NjU2IDYuMDU4NTk0LTE1LjE0NDUzMSAzLjQ4NDM3NS0yMi44NTkzNzV6bS0yNDkuMzIwMzEyLTg0LjQ0MTQwNmg4My4wNjI1djI4Ljk3NjU2MmgtODMuMDYyNXptMTYyLjgwNDY4NyA0MzcuMDE5NTMxYy0uNjc5Njg3IDguNDAyMzQ0LTcuNzk2ODc1IDE0Ljk4MDQ2OS0xNi4yMDMxMjUgMTQuOTgwNDY5aC0yMDQuODYzMjgxYy04LjQwNjI1IDAtMTUuNTIzNDM4LTYuNTc4MTI1LTE2LjIwMzEyNS0xNC45ODA0NjlsLTI1LjgxNjQwNi0zMTkuMTgzNTkzaDI4OC44OTg0Mzd6bS0yOTguNTY2NDA2LTM0OS4xODM1OTMgOS4yNjk1MzEtMjcuNzg5MDYzYy4yMTA5MzgtLjY0MDYyNS44MDg1OTQtMS4wNzAzMTMgMS40ODQzNzUtMS4wNzAzMTNoMzMzLjA4MjAzMWMuNjc1NzgyIDAgMS4yNjk1MzIuNDI5Njg4IDEuNDg0Mzc1IDEuMDcwMzEzbDkuMjY5NTMxIDI3Ljc4OTA2M3ptMCAwIiBmaWxsPSIjMDAwMDAwIi8+PHBhdGggZD0ibTI4Mi41MTU2MjUgNDY1Ljk1NzAzMWMuMjY1NjI1LjAxNTYyNS41MjczNDQuMDE5NTMxLjc5Mjk2OS4wMTk1MzEgNy45MjU3ODEgMCAxNC41NTA3ODEtNi4yMTA5MzcgMTQuOTY0ODQ0LTE0LjIxODc1bDE0LjA4NTkzNy0yNzAuMzk4NDM3Yy40Mjk2ODctOC4yNzM0MzctNS45Mjk2ODctMTUuMzMyMDMxLTE0LjE5OTIxOS0xNS43NjE3MTktOC4yOTI5NjgtLjQ0MTQwNi0xNS4zMjgxMjUgNS45MjU3ODItMTUuNzYxNzE4IDE0LjE5OTIxOWwtMTQuMDgyMDMyIDI3MC4zOTg0MzdjLS40Mjk2ODcgOC4yNzM0MzggNS45MjU3ODIgMTUuMzMyMDMyIDE0LjE5OTIxOSAxNS43NjE3MTl6bTAgMCIgZmlsbD0iIzAwMDAwMCIvPjxwYXRoIGQ9Im0xMjAuNTY2NDA2IDQ1MS43OTI5NjljLjQzNzUgNy45OTYwOTMgNy4wNTQ2ODggMTQuMTgzNTkzIDE0Ljk2NDg0NCAxNC4xODM1OTMuMjczNDM4IDAgLjU1NDY4OC0uMDA3ODEyLjgzMjAzMS0uMDIzNDM3IDguMjY5NTMxLS40NDkyMTkgMTQuNjA5Mzc1LTcuNTE5NTMxIDE0LjE2MDE1Ny0xNS43OTI5NjlsLTE0Ljc1MzkwNy0yNzAuMzk4NDM3Yy0uNDQ5MjE5LTguMjczNDM4LTcuNTE5NTMxLTE0LjYxMzI4MS0xNS43OTI5NjktMTQuMTYwMTU3LTguMjY5NTMxLjQ0OTIxOS0xNC42MDkzNzQgNy41MTk1MzItMTQuMTYwMTU2IDE1Ljc5Mjk2OXptMCAwIiBmaWxsPSIjMDAwMDAwIi8+PHBhdGggZD0ibTIwOS4yNTM5MDYgNDY1Ljk3NjU2MmM4LjI4NTE1NiAwIDE1LTYuNzE0ODQzIDE1LTE1di0yNzAuMzk4NDM3YzAtOC4yODUxNTYtNi43MTQ4NDQtMTUtMTUtMTVzLTE1IDYuNzE0ODQ0LTE1IDE1djI3MC4zOTg0MzdjMCA4LjI4NTE1NyA2LjcxNDg0NCAxNSAxNSAxNXptMCAwIiBmaWxsPSIjMDAwMDAwIi8+PC9zdmc+Cg==)
